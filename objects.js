@@ -6,22 +6,21 @@ const phrase = 'Hello World World'
 function countWords(phrase) {
   //split into a list 
   const phrase_list = phrase.split(' ');
-  const countDict = {};
+  const wordCount = {};
+
   for (const word of phrase_list) {
-    if (countDict[word]) { 
-      countDict[word] += 1;
+    if (wordCount[word]) { 
+      wordCount[word] += 1;
     }
     else {
-      countDict[word] = 1;
+      wordCount[word] = 1;
     }
   }
 
-  return countDict;
+  return wordCount;
 }
 
-const testDict = countWords(phrase)
-
-console.log(testDict)
+console.log(countWords(phrase));
 
 
 // 2. getMelonsAtPrice
@@ -33,13 +32,12 @@ function getMelonsAtPrice(price) {
     3.25: ['Musk', 'Crenshaw'],
     14.25: ['Christmas']
   };
+  
   if (!melonPrices[price]) { 
-    return 
+    return; 
   }
-  else {
-    return melonPrices[price].sort();
-  }
+ return melonPrices[price].sort();
+
 }
 
-const melonDict = getMelonsAtPrice(3.25)
-console.log(melonDict)
+console.log(getMelonsAtPrice(3.25));
